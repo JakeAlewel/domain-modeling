@@ -7,3 +7,39 @@
 //
 
 import Foundation
+
+class Person {
+    
+    var firstName : String = "";
+    var lastName : String = "";
+    var age : Int = 0;
+    
+    var job : Job? {
+        set(newJob) {
+            if(age >= 16) {
+                self.job = newJob;
+            }
+        }
+        
+        get {
+            return self.job;
+        }
+    }
+    
+    weak var spouse : Person? {
+        set(newSpouse) {
+            if(age >= 18) {
+                self.spouse = newSpouse;
+            }
+        }
+        
+        get {
+            return self.spouse;
+        }
+    }
+    
+    func toString() -> String {
+        return "Name: \(firstName) + \(lastName). Age: \(age)."
+    }
+
+}
