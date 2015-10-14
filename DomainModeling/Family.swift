@@ -30,8 +30,8 @@ class Family {
     func houseHoldIncome() -> Double {
         var totalIncome = 0.0;
         for person in members {
-            if person.job != nil {
-                totalIncome += person.job!.calculateIncome(2087);
+            if person.getJob() != nil {
+                totalIncome += person.getJob()!.calculateIncome(2087);
             }
         }
         return totalIncome;

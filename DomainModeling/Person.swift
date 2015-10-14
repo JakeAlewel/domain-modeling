@@ -14,29 +14,8 @@ class Person {
     var lastName : String = "";
     var age : Int = 0;
     
-    var job : Job? {
-        set(newJob) {
-            if(age >= 16) {
-                self.job = newJob;
-            }
-        }
-        
-        get {
-            return self.job;
-        }
-    }
-    
-    weak var spouse : Person? {
-        set(newSpouse) {
-            if(age >= 18) {
-                self.spouse = newSpouse;
-            }
-        }
-        
-        get {
-            return self.spouse;
-        }
-    }
+    private var job : Job?
+    private weak var spouse : Person?
     
     init (firstName: String, lastName: String, age: Int) {
         self.firstName = firstName;
@@ -46,6 +25,26 @@ class Person {
     
     func toString() -> String {
         return "Name: \(firstName) + \(lastName). Age: \(age)."
+    }
+    
+    func setJob(newJob: Job) {
+        if(self.age >= 16) {
+            self.job = newJob;
+        }
+    }
+    
+    func getJob() -> Job? {
+        return self.job;
+    }
+    
+    func setSpouse(newSpouse: Person) {
+        if(self.age >= 18) {
+            self.spouse = newSpouse;
+        }
+    }
+    
+    func getSpouse() -> Person? {
+        return self.spouse;
     }
 
 }
