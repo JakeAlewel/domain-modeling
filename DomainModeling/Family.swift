@@ -7,3 +7,42 @@
 //
 
 import Foundation
+
+class Family {
+    
+    var members : Array<Person>;
+    
+    private var isLegalFamily : Bool {
+        get {
+            for person in members {
+                if(person.age > 21) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    
+    init (members: Person...) {
+        self.members = members;
+    }
+    
+    func houseHoldIncome() -> Double {
+        var totalIncome = 0.0;
+        for person in members {
+            if person.job != nil {
+                totalIncome += person.job!.calculateIncome(2087);
+            }
+        }
+        return totalIncome;
+    }
+    
+    func haveChild(childFirstName: String, childLastName: String) -> Bool {
+        if isLegalFamily {
+            members.append(Person(firstName: childFirstName, lastName: childLastName, age: 0));
+            return true;
+        }
+        return false;
+    }
+    
+}

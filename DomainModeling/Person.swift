@@ -38,6 +38,12 @@ class Person {
         }
     }
     
+    init (firstName: String, lastName: String, age: Int) {
+        self.firstName = firstName;
+        self.lastName = lastName;
+        self.age = age;
+    }
+    
     func toString() -> String {
         return "Name: \(firstName) + \(lastName). Age: \(age)."
     }
