@@ -16,6 +16,7 @@ enum CurrencyType {
 }
 
 struct Money {
+    
     var amount : Double;
     var currency : CurrencyType
     
@@ -33,4 +34,5 @@ struct Money {
         moneyToAdd.convertToCurrency(currency);
         amount -= moneyToAdd.amount;
     }
+    
 }

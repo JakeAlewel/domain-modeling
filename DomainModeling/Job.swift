@@ -7,3 +7,34 @@
 //
 
 import Foundation
+
+enum SalaryType {
+    case PerHour
+    case PerYear
+}
+
+class Job {
+    
+    var title : String = "";
+    var salary : Double = 0;
+    var salaryType : SalaryType;
+    
+    init(title: String, salary: Double, salaryType: SalaryType) {
+        self.title = title;
+        self.salary = salary;
+        self.salaryType = salaryType;
+    }
+    
+    func calculateIncome(hoursWorked: Double) -> Double {
+        if(salaryType == SalaryType.PerHour) {
+            return salary * hoursWorked;
+        } else {
+            return salary;
+        }
+    }
+    
+    func raise(raisePercentage: Double) {
+        salary += salary * raisePercentage;
+    }
+    
+}
