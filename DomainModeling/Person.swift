@@ -24,12 +24,14 @@ class Person {
     }
     
     func toString() -> String {
-        return "Name: \(firstName) + \(lastName). Age: \(age)."
+        return "Name: \(firstName) \(lastName). Age: \(age)."
     }
     
     func setJob(newJob: Job) {
         if(self.age >= 16) {
             self.job = newJob;
+        } else {
+            print("To young to have a job");
         }
     }
     
@@ -40,6 +42,8 @@ class Person {
     func setSpouse(newSpouse: Person) {
         if(self.age >= 18) {
             self.spouse = newSpouse;
+        } else {
+            print("To young to have a spouse");
         }
     }
     

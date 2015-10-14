@@ -42,6 +42,8 @@ class Family {
             members.append(Person(firstName: childFirstName, lastName: childLastName, age: 0));
             return true;
         }
+        
+        print("Family cannot legally have child");
         return false;
     }
     
