@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Job.swift
 //  DomainModeling
 //
 //  Created by Jacob Alewel on 10/13/15.
@@ -7,6 +7,3 @@
 //
 
 import Foundation
-
-
-
