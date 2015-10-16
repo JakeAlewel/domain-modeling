@@ -34,6 +34,17 @@ func testValidFamilyCases() {
     print("There are now \(family.members.count) family members");
 }
 
+func testJobTooYoung() {
+    print(">> Create Job");
+    let astronaut = Job(title: "Astronaut", salary: 200000, salaryType: SalaryType.PerYear);
+    
+    print(">> Create Person");
+    let person = Person(firstName: "Jake", lastName: "Kid", age: 12);
+    
+    print(">> Attempt to start job");
+    person.setJob(astronaut);
+}
+
 func testMarryingTooYoung() {
     print(">> Create Teenagers");
     let teen1 = Person(firstName: "Keith", lastName: "Martinez", age: 15);
@@ -90,11 +101,61 @@ func testMoneyConversion() {
 }
 
 func testMoneyAddition() {
-
+    func testAddingCurrency(firstCurrency: CurrencyType, secondCurrency: CurrencyType) {
+        var firstValue = Money(amount: 1.0, currency: firstCurrency);
+        let secondValue = Money(amount: 1.0, currency: secondCurrency);
+        firstValue.add(secondValue);
+        print("Added 1.0 \(firstCurrency) to 1.0 \(secondCurrency) to equal \(firstValue.amount) \(firstCurrency)");
+    }
+    
+    testAddingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.USD);
+    testAddingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.GBP);
+    testAddingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.EUR);
+    testAddingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.CAN);
+    
+    testAddingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.USD);
+    testAddingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.GBP);
+    testAddingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.EUR);
+    testAddingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.CAN);
+    
+    testAddingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.USD);
+    testAddingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.GBP);
+    testAddingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.EUR);
+    testAddingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.CAN);
+    
+    testAddingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.USD);
+    testAddingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.GBP);
+    testAddingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.EUR);
+    testAddingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.CAN);
 }
 
 func testMoneySubtraction() {
+    func testSubtractingCurrency(firstCurrency: CurrencyType, secondCurrency: CurrencyType) {
+        var firstValue = Money(amount: 1.0, currency: firstCurrency);
+        let secondValue = Money(amount: 1.0, currency: secondCurrency);
+        firstValue.subtract(secondValue);
+        print("Subtracted 1.0 \(secondCurrency) from 1.0 \(firstCurrency) to equal \(firstValue.amount) \(firstCurrency)");
+    }
     
+    testSubtractingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.USD);
+    testSubtractingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.GBP);
+    testSubtractingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.EUR);
+    testSubtractingCurrency(CurrencyType.USD, secondCurrency: CurrencyType.CAN);
+    
+    testSubtractingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.USD);
+    testSubtractingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.GBP);
+    testSubtractingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.EUR);
+    testSubtractingCurrency(CurrencyType.GBP, secondCurrency: CurrencyType.CAN);
+    
+    testSubtractingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.USD);
+    testSubtractingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.GBP);
+    testSubtractingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.EUR);
+    testSubtractingCurrency(CurrencyType.EUR, secondCurrency: CurrencyType.CAN);
+    
+    testSubtractingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.USD);
+    testSubtractingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.GBP);
+    testSubtractingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.EUR);
+    testSubtractingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.CAN);
 }
 
 func printDivider(sectionHeader: String) {
@@ -113,6 +174,9 @@ func performTests() {
     printDivider("Test Valid Family");
     testValidFamilyCases();
     
+    printDivider("Test Starting Job Too Young");
+    testJobTooYoung();
+    
     printDivider("Test Marrying Too Young");
     testMarryingTooYoung();
     
@@ -127,6 +191,8 @@ func performTests() {
     
     printDivider("Test Money Subtraction");
     testMoneySubtraction();
+    
+    printDivider("Tests Complete");
 }
 
 performTests();

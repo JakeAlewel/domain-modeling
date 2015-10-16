@@ -32,7 +32,7 @@ class Person {
             print("\(firstName) now works as a \(newJob.title)");
             self.job = newJob;
         } else {
-            print("To young to have a job");
+            print("Too young to have a job");
         }
     }
     
