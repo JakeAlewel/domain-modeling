@@ -31,7 +31,7 @@ class Family {
         var totalIncome = 0.0;
         for person in members {
             if person.getJob() != nil {
-                totalIncome += person.getJob()!.calculateIncome(2087);
+                totalIncome += person.getJob()!.calculateIncome(2000);
             }
         }
         return totalIncome;
