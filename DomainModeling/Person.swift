@@ -29,6 +29,7 @@ class Person {
     
     func setJob(newJob: Job) {
         if(self.age >= 16) {
+            print("\(firstName) now works as a \(newJob.title)");
             self.job = newJob;
         } else {
             print("To young to have a job");
@@ -41,6 +42,7 @@ class Person {
     
     func setSpouse(newSpouse: Person) {
         if(self.age >= 18) {
+            print("\(firstName) married \(newSpouse.firstName)");
             self.spouse = newSpouse;
         } else {
             print("To young to have a spouse");
