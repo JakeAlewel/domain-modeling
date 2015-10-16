@@ -35,11 +35,30 @@ func testValidFamilyCases() {
 }
 
 func testMarryingTooYoung() {
+    print(">> Create Teenagers");
+    let teen1 = Person(firstName: "Keith", lastName: "Martinez", age: 15);
+    let teen2 = Person(firstName: "Katie", lastName: "Gato", age: 16);
+    print(teen1.toString());
+    print(teen2.toString());
     
+    print(">> Attempt To Marry Teenagers");
+    teen1.setSpouse(teen2);
+    teen2.setSpouse(teen1);
 }
 
 func testHavingAChildTooYoung() {
+    print(">> Create Parents");
+    let mother = Person(firstName: "Cristie", lastName: "Jobs", age: 19);
+    print(mother.toString());
+    let father = Person(firstName: "Harry", lastName: "Jobs", age: 20);
+    print(father.toString());
     
+    print(">> Create Family");
+    let family = Family(members: mother, father);
+    print("Family Income: \(family.houseHoldIncome())");
+    
+    print(">> Attempt To Have Child");
+    family.haveChild("Not", childLastName: "Possible");
 }
 
 func testMoneyConversion() {
@@ -54,22 +73,37 @@ func testMoneySubtraction() {
     
 }
 
-print(">>>>>");
-print(">>>>> Test Valid Family");
-testValidFamilyCases();
-print(">>>>>");
-print(">>>>> Test Marrying Too Young");
-testMarryingTooYoung();
-print(">>>>>");
-print(">>>>> Test Having A Child Too Young");
-testHavingAChildTooYoung();
-print(">>>>>");
-print(">>>>> Test Money Conversion");
-testMoneyConversion();
-print(">>>>>");
-print(">>>>> Test Money Addition");
-testMoneyAddition();
-print(">>>>>");
-print(">>>>> Test Money Subtraction");
-testMoneySubtraction();
+func printDivider(sectionHeader: String) {
+    var printString = ""
+    for _ in 0...40 {
+        printString += ">";
+    }
+    print("");
+    print(printString);
+    print(">>>>> \(sectionHeader)");
+    print(printString);
+    print("");
+}
+
+func performTests() {
+    printDivider("Test Valid Family");
+    testValidFamilyCases();
+    
+    printDivider("Test Marrying Too Young");
+    testMarryingTooYoung();
+    
+    printDivider("Test Having A Child Too Young");
+    testHavingAChildTooYoung();
+    
+    printDivider("Test Money Conversion");
+    testMoneyConversion();
+    
+    printDivider("Test Money Addition");
+    testMoneyAddition();
+    
+    printDivider("Test Money Subtraction");
+    testMoneySubtraction();
+}
+
+performTests();
 
