@@ -45,7 +45,7 @@ class Person {
             print("\(firstName) married \(newSpouse.firstName)");
             self.spouse = newSpouse;
         } else {
-            print("To young to have a spouse");
+            print("\(firstName) is too young to have a spouse");
         }
     }
     
