@@ -62,11 +62,35 @@ func testHavingAChildTooYoung() {
 }
 
 func testMoneyConversion() {
+    func testConvertToCurrency(fromCurrency: CurrencyType, toCurrency: CurrencyType) {
+        var oneUSD = Money(amount: 1.0, currency: fromCurrency);
+        oneUSD.convertToCurrency(toCurrency);
+        print("Converted 1.0 \(fromCurrency) to \(oneUSD.amount) \(toCurrency)");
+    }
     
+    testConvertToCurrency(CurrencyType.USD, toCurrency: CurrencyType.USD);
+    testConvertToCurrency(CurrencyType.USD, toCurrency: CurrencyType.GBP);
+    testConvertToCurrency(CurrencyType.USD, toCurrency: CurrencyType.EUR);
+    testConvertToCurrency(CurrencyType.USD, toCurrency: CurrencyType.CAN);
+    
+    testConvertToCurrency(CurrencyType.GBP, toCurrency: CurrencyType.USD);
+    testConvertToCurrency(CurrencyType.GBP, toCurrency: CurrencyType.GBP);
+    testConvertToCurrency(CurrencyType.GBP, toCurrency: CurrencyType.EUR);
+    testConvertToCurrency(CurrencyType.GBP, toCurrency: CurrencyType.CAN);
+    
+    testConvertToCurrency(CurrencyType.EUR, toCurrency: CurrencyType.USD);
+    testConvertToCurrency(CurrencyType.EUR, toCurrency: CurrencyType.GBP);
+    testConvertToCurrency(CurrencyType.EUR, toCurrency: CurrencyType.EUR);
+    testConvertToCurrency(CurrencyType.EUR, toCurrency: CurrencyType.CAN);
+    
+    testConvertToCurrency(CurrencyType.CAN, toCurrency: CurrencyType.USD);
+    testConvertToCurrency(CurrencyType.CAN, toCurrency: CurrencyType.GBP);
+    testConvertToCurrency(CurrencyType.CAN, toCurrency: CurrencyType.EUR);
+    testConvertToCurrency(CurrencyType.CAN, toCurrency: CurrencyType.CAN);
 }
 
 func testMoneyAddition() {
-    
+
 }
 
 func testMoneySubtraction() {
