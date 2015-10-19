@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E7828AE1BD469FB00370D21 /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7828AD1BD469FB00370D21 /* CustomStringConvertible.swift */; settings = {ASSET_TAGS = (); }; };
+		4E7828B01BD46F2600370D21 /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7828AF1BD46F2600370D21 /* Mathematics.swift */; settings = {ASSET_TAGS = (); }; };
 		4EBE477E1BCDFA5E005BD788 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE477D1BCDFA5E005BD788 /* main.swift */; };
 		4EBE47851BCDFAF4005BD788 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE47841BCDFAF4005BD788 /* Money.swift */; settings = {ASSET_TAGS = (); }; };
 		4EBE47871BCDFB4D005BD788 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE47861BCDFB4D005BD788 /* Job.swift */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4E7828AD1BD469FB00370D21 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStringConvertible.swift; sourceTree = "<group>"; };
+		4E7828AF1BD46F2600370D21 /* Mathematics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
 		4EBE477A1BCDFA5E005BD788 /* DomainModeling */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DomainModeling; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBE477D1BCDFA5E005BD788 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4EBE47841BCDFAF4005BD788 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				4EBE47841BCDFAF4005BD788 /* Money.swift */,
 				4EBE47861BCDFB4D005BD788 /* Job.swift */,
 				4EBE47881BCDFB55005BD788 /* Person.swift */,
+				4E7828AF1BD46F2600370D21 /* Mathematics.swift */,
 				4EBE478A1BCDFB5A005BD788 /* Family.swift */,
 			);
 			path = DomainModeling;
@@ -139,6 +142,7 @@
 				4EBE47891BCDFB55005BD788 /* Person.swift in Sources */,
 				4EBE477E1BCDFA5E005BD788 /* main.swift in Sources */,
 				4E7828AE1BD469FB00370D21 /* CustomStringConvertible.swift in Sources */,
+				4E7828B01BD46F2600370D21 /* Mathematics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
