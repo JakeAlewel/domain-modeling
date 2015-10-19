@@ -158,6 +158,21 @@ func testMoneySubtraction() {
     testSubtractingCurrency(CurrencyType.CAN, secondCurrency: CurrencyType.CAN);
 }
 
+func testCustomStringConvertibleProtocol() {
+    let money = Money(amount: 1.0, currency: CurrencyType.USD);
+    print(money.description());
+    
+    let job = Job(title: "Software Development Engineer", salary: 80000, salaryType: SalaryType.PerYear);
+    print(job.description());
+    
+    let person1 = Person(firstName: "Jacob", lastName: "Alewel", age: 21);
+    print(person1.description());
+    
+    let person2 = Person(firstName: "Future_Wife", lastName: "Alewel", age: 21);
+    let family = Family(members: person1, person2);
+    print(family.description());
+}
+
 func printDivider(sectionHeader: String) {
     var printString = ""
     for _ in 0...40 {
@@ -191,6 +206,9 @@ func performTests() {
     
     printDivider("Test Money Subtraction");
     testMoneySubtraction();
+    
+    printDivider("Test CustomStringConvertible protocol");
+    testCustomStringConvertibleProtocol();
     
     printDivider("Tests Complete");
 }
