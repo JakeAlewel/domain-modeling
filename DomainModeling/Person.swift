@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Person {
+class Person : CustomStringConvertible {
     
     var firstName : String = "";
     var lastName : String = "";
@@ -51,6 +51,10 @@ class Person {
     
     func getSpouse() -> Person? {
         return self.spouse;
+    }
+    
+    func description() -> String {
+        return toString();
     }
 
 }

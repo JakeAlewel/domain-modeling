@@ -13,7 +13,7 @@ enum SalaryType {
     case PerYear
 }
 
-class Job {
+class Job : CustomStringConvertible {
     
     var title : String = "";
     var salary : Double = 0;
@@ -35,6 +35,10 @@ class Job {
     
     func raise(raisePercentage: Double) {
         salary += salary * raisePercentage;
+    }
+    
+    func description() -> String {
+        return "\(title) @ \(salary) \(salaryType)"
     }
     
 }

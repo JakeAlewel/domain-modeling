@@ -15,7 +15,7 @@ enum CurrencyType {
     case CAN
 }
 
-struct Money {
+struct Money : CustomStringConvertible {
     
     var amount : Double;
     var currency : CurrencyType
@@ -63,6 +63,10 @@ struct Money {
     mutating func subtract(var moneyToAdd: Money) {
         moneyToAdd.convertToCurrency(currency);
         amount -= moneyToAdd.amount;
+    }
+    
+    func description() -> String {
+        return "\(amount) \(currency)";
     }
     
 }

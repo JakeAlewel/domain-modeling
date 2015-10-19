@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Family {
+class Family : CustomStringConvertible {
     
     var members : Array<Person>;
     
@@ -45,6 +45,19 @@ class Family {
         
         print("Family cannot legally have child");
         return false;
+    }
+    
+    func description() -> String {
+        var stringToReturn = "[";
+        for var n = 0; n < members.count; n++ {
+            stringToReturn += members[n].description();
+            if n==members.count-1 {
+                stringToReturn += "]";
+            } else {
+                stringToReturn += ", ";
+            }
+        }
+        return stringToReturn;
     }
     
 }
