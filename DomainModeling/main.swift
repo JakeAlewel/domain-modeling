@@ -195,6 +195,13 @@ func testMathematicsProtocol() {
     print("\(money3.description()) - \(money2.description()) = \(moneyDiff3.description())");
 }
 
+func testCurrencyExtension() {
+    print("(20.0).USD = \((20.0).USD.description())");
+    print("(20.0).GBP = \((20.0).GBP.description())");
+    print("(20.0).EUR = \((20.0).EUR.description())");
+    print("(20.0).CAN = \((20.0).CAN.description())");
+}
+
 func printDivider(sectionHeader: String) {
     var printString = ""
     for _ in 0...40 {
@@ -229,11 +236,14 @@ func performTests() {
     printDivider("Test Money Subtraction");
     testMoneySubtraction();
     
-    printDivider("Test CustomStringConvertible protocol");
+    printDivider("Test CustomStringConvertible Protocol");
     testCustomStringConvertibleProtocol();
     
-    printDivider("Test Mathematics protocol");
+    printDivider("Test Mathematics Protocol");
     testMathematicsProtocol();
+    
+    printDivider("Test Currency Extension")
+    testCurrencyExtension();
     
     printDivider("Tests Complete");
 }
