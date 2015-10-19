@@ -173,6 +173,28 @@ func testCustomStringConvertibleProtocol() {
     print(family.description());
 }
 
+func testMathematicsProtocol() {
+    let money1 = Money(amount: 2.0, currency: CurrencyType.USD);
+    let money2 = Money(amount: 1.0, currency: CurrencyType.USD);
+    let moneySum1 = money1 + money2;
+    let moneyDiff1 = money1 - money2;
+    print("\(money1.description()) + \(money2.description()) = \(moneySum1.description())");
+    print("\(money1.description()) - \(money2.description()) = \(moneyDiff1.description())");
+    print("");
+    
+    let money3 = Money(amount: 2.0, currency: CurrencyType.CAN);
+    let moneySum2 = money1 + money3;
+    let moneyDiff2 = money1 - money3;
+    print("\(money1.description()) + \(money3.description()) = \(moneySum2.description())");
+    print("\(money1.description()) - \(money3.description()) = \(moneyDiff2.description())");
+    print("");
+    
+    let moneySum3 = money3 + money2;
+    let moneyDiff3 = money3 - money2;
+    print("\(money3.description()) + \(money2.description()) = \(moneySum3.description())");
+    print("\(money3.description()) - \(money2.description()) = \(moneyDiff3.description())");
+}
+
 func printDivider(sectionHeader: String) {
     var printString = ""
     for _ in 0...40 {
@@ -209,6 +231,9 @@ func performTests() {
     
     printDivider("Test CustomStringConvertible protocol");
     testCustomStringConvertibleProtocol();
+    
+    printDivider("Test Mathematics protocol");
+    testMathematicsProtocol();
     
     printDivider("Tests Complete");
 }
