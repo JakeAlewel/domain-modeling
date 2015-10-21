@@ -13,6 +13,10 @@ class Person : CustomStringConvertible {
     var firstName : String = "";
     var lastName : String = "";
     var age : Int = 0;
+    var description : String {
+        get {
+            return toString();        }
+    };
     
     private var job : Job?
     private weak var spouse : Person?
@@ -51,10 +55,6 @@ class Person : CustomStringConvertible {
     
     func getSpouse() -> Person? {
         return self.spouse;
-    }
-    
-    func description() -> String {
-        return toString();
     }
 
 }

@@ -10,6 +10,6 @@ import Foundation
 
 protocol CustomStringConvertible {
     
-    func description() -> String;
+    var description : String { get };
     
 }

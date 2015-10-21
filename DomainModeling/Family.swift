@@ -11,6 +11,21 @@ import Foundation
 class Family : CustomStringConvertible {
     
     var members : Array<Person>;
+    var description : String {
+        get {
+            var stringToReturn = "[";
+            for var n = 0; n < members.count; n++ {
+                stringToReturn += members[n].description;
+                if n==members.count-1 {
+                    stringToReturn += "]";
+                } else {
+                    stringToReturn += ", ";
+                }
+            }
+            stringToReturn += " @ \(houseHoldIncome()) PerYear"
+            return stringToReturn;
+        }
+    };
     
     private var isLegalFamily : Bool {
         get {
@@ -45,19 +60,6 @@ class Family : CustomStringConvertible {
         
         print("Family cannot legally have child");
         return false;
-    }
-    
-    func description() -> String {
-        var stringToReturn = "[";
-        for var n = 0; n < members.count; n++ {
-            stringToReturn += members[n].description();
-            if n==members.count-1 {
-                stringToReturn += "]";
-            } else {
-                stringToReturn += ", ";
-            }
-        }
-        return stringToReturn;
     }
     
 }

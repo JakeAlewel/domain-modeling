@@ -28,7 +28,12 @@ func - (var left: Money, right: Money) -> Money {
 struct Money : CustomStringConvertible, Mathematics {
     
     var amount : Double;
-    var currency : CurrencyType
+    var currency : CurrencyType;
+    var description : String {
+        get {
+            return "\(amount) \(currency)";
+        }
+    };
     
     mutating func convertToCurrency(toCurrency: CurrencyType) {
         if currency != toCurrency {
@@ -73,10 +78,6 @@ struct Money : CustomStringConvertible, Mathematics {
     mutating func subtract(var moneyToSubtract: Money) {
         moneyToSubtract.convertToCurrency(currency);
         amount -= moneyToSubtract.amount;
-    }
-    
-    func description() -> String {
-        return "\(amount) \(currency)";
     }
 
 }

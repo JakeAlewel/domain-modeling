@@ -160,17 +160,19 @@ func testMoneySubtraction() {
 
 func testCustomStringConvertibleProtocol() {
     let money = Money(amount: 1.0, currency: CurrencyType.USD);
-    print(money.description());
+    print(money.description);
     
-    let job = Job(title: "Software Development Engineer", salary: 80000, salaryType: SalaryType.PerYear);
-    print(job.description());
+    let job = Job(title: "Software Development Engineer", salary: 800000, salaryType: SalaryType.PerYear);
+    print(job.description);
     
-    let person1 = Person(firstName: "Jacob", lastName: "Alewel", age: 21);
-    print(person1.description());
+    let person1 = Person(firstName: "Jacob", lastName: "Alewel", age: 24);
+    person1.setJob(job);
+    print(person1.description);
     
-    let person2 = Person(firstName: "Future_Wife", lastName: "Alewel", age: 21);
+    let person2 = Person(firstName: "Future_Wife", lastName: "Alewel", age: 24);
     let family = Family(members: person1, person2);
-    print(family.description());
+    family.haveChild("Baby", childLastName: "Alewel");
+    print(family.description);
 }
 
 func testMathematicsProtocol() {
@@ -178,28 +180,28 @@ func testMathematicsProtocol() {
     let money2 = Money(amount: 1.0, currency: CurrencyType.USD);
     let moneySum1 = money1 + money2;
     let moneyDiff1 = money1 - money2;
-    print("\(money1.description()) + \(money2.description()) = \(moneySum1.description())");
-    print("\(money1.description()) - \(money2.description()) = \(moneyDiff1.description())");
+    print("\(money1.description) + \(money2.description) = \(moneySum1.description)");
+    print("\(money1.description) - \(money2.description) = \(moneyDiff1.description)");
     print("");
     
     let money3 = Money(amount: 2.0, currency: CurrencyType.CAN);
     let moneySum2 = money1 + money3;
     let moneyDiff2 = money1 - money3;
-    print("\(money1.description()) + \(money3.description()) = \(moneySum2.description())");
-    print("\(money1.description()) - \(money3.description()) = \(moneyDiff2.description())");
+    print("\(money1.description) + \(money3.description) = \(moneySum2.description)");
+    print("\(money1.description) - \(money3.description) = \(moneyDiff2.description)");
     print("");
     
     let moneySum3 = money3 + money2;
     let moneyDiff3 = money3 - money2;
-    print("\(money3.description()) + \(money2.description()) = \(moneySum3.description())");
-    print("\(money3.description()) - \(money2.description()) = \(moneyDiff3.description())");
+    print("\(money3.description) + \(money2.description) = \(moneySum3.description)");
+    print("\(money3.description) - \(money2.description) = \(moneyDiff3.description)");
 }
 
 func testCurrencyExtension() {
-    print("(20.0).USD = \((20.0).USD.description())");
-    print("(20.0).GBP = \((20.0).GBP.description())");
-    print("(20.0).EUR = \((20.0).EUR.description())");
-    print("(20.0).CAN = \((20.0).CAN.description())");
+    print("(20.0).USD = \((20.0).USD.description)");
+    print("(20.0).GBP = \((20.0).GBP.description)");
+    print("(20.0).EUR = \((20.0).EUR.description)");
+    print("(20.0).CAN = \((20.0).CAN.description)");
 }
 
 func printDivider(sectionHeader: String) {

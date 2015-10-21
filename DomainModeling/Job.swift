@@ -18,6 +18,11 @@ class Job : CustomStringConvertible {
     var title : String = "";
     var salary : Double = 0;
     var salaryType : SalaryType;
+    var description : String {
+        get {
+            return "\(title) @ \(salary) \(salaryType)";
+        }
+    };
     
     init(title: String, salary: Double, salaryType: SalaryType) {
         self.title = title;
@@ -35,10 +40,6 @@ class Job : CustomStringConvertible {
     
     func raise(raisePercentage: Double) {
         salary += salary * raisePercentage;
-    }
-    
-    func description() -> String {
-        return "\(title) @ \(salary) \(salaryType)"
     }
     
 }
